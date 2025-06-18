@@ -38,7 +38,6 @@ def make_start_date_kb() -> ReplyKeyboardMarkup:
     kb.add(KeyboardButton(BTN_BACK))
     return kb
 
-# Динамічна клавіатура з ID доступних транспортних засобів
 def make_vehicle_id_kb(ids, include_back: bool = True) -> ReplyKeyboardMarkup:
     """Створює клавіатуру з кнопками-ID доступних моделей.
 

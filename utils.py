@@ -32,18 +32,14 @@ async def build_vehicle_list(v_type: str, service) -> str:
 async def send_menu(chat_id: int, text: str, kb: ReplyKeyboardMarkup, bot, last_msg):
     if chat_id in last_msg:
         try:
-            # Перш намагаємось змінити текст і клавіатуру
             await bot.edit_message_text(text, chat_id, last_msg[chat_id], reply_markup=kb)
             return
         except Exception as e:
-            # Якщо текст не змінився, Telegram повертає "message is not modified"
-            # Тоді оновлюємо лише клавіатуру або ігноруємо
             if "message is not modified" in str(e).lower():
                 try:
                     await bot.edit_message_reply_markup(chat_id, last_msg[chat_id], reply_markup=kb)
                 except Exception:
                     pass
                 return
-            # Якщо помилка інша, пробуємо надіслати нове повідомлення нижче
     msg = await bot.send_message(chat_id, text, reply_markup=kb)
     last_msg[chat_id] = msg.message_id 
