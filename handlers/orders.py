@@ -1,5 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from aiogram import types
 from aiogram.dispatcher import Dispatcher
+from keyboards import BTN_MY_RENTALS
+from utils import get_vehicle_price
 
 def register_orders_handlers(dp: Dispatcher, service, get_vehicle_price):
     @dp.message_handler(lambda message: message.text == '📋 Мої оренди')

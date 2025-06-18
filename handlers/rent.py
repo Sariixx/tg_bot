@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from aiogram import types
 from aiogram.dispatcher import Dispatcher
 from keyboards import make_rental_period_reply_kb_dynamic, make_start_date_kb, make_main_kb, make_vehicle_id_kb, BTN_BACK

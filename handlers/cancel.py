@@ -1,6 +1,10 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from aiogram import types
 from aiogram.dispatcher import Dispatcher
-from keyboards import BTN_CANCEL
+from keyboards import BTN_CANCEL, make_main_kb, BTN_BACK
 from utils import get_vehicle_price
 
 def register_cancel_handlers(dp: Dispatcher, send_menu, bot, last_msg, user_return_mode, service, make_main_kb):
