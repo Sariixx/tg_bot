@@ -34,13 +34,9 @@ def init_db():
         )
     ''')
 
-    # Реальні (або більш правдоподібні) комерційні моделі
     vehicles = [
-        # electric bikes
         ('electric_bike', 'Specialized Turbo Vado 4.0', 250, 40, 300, 5, 5),
         ('electric_bike', 'Giant Explore E+', 500, 120, 450, 5, 5),
-
-        # electric scooters
         ('electric_scooter', 'Xiaomi Mi Electric Scooter 3', 300, 30, 150, 5, 5),
         ('electric_scooter', 'Segway Ninebot ZT3 Pro E', 550, 65, 200, 5, 5)
     ]
